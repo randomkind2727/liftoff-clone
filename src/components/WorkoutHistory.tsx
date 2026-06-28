@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useWorkoutStore } from '@/store/workoutStore';
-import { Clock, Flame, Zap } from 'lucide-react';
+import { Clock, Flame, Zap, Database } from 'lucide-react';
 
 export function WorkoutHistory() {
-  const { workouts } = useWorkoutStore();
+  const { workouts, loadDemoData } = useWorkoutStore();
 
   const sortedWorkouts = [...workouts].reverse();
 
@@ -16,7 +16,18 @@ export function WorkoutHistory() {
       transition={{ delay: 0.5 }}
       className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6"
     >
-      <h2 className="text-xl font-bold text-white mb-4">Workout History</h2>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-xl font-bold text-white">Workout History</h2>
+        {workouts.length === 0 && (
+          <button
+            onClick={loadDemoData}
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-400 bg-slate-800 hover:bg-slate-700 rounded-lg transition"
+          >
+            <Database className="w-3.5 h-3.5" />
+            Load Demo
+          </button>
+        )}
+      </div>
 
       {sortedWorkouts.length === 0 ? (
         <div className="text-center py-12">

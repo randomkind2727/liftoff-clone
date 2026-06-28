@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Liftoff Clone — Gamified Workout Tracker
 
-## Getting Started
+**8x Engineer Contest Submission**
 
-First, run the development server:
+A full-stack gamified workout tracker built with Next.js 16, TypeScript, Tailwind CSS, and Framer Motion. Track workouts, earn XP, level up, and unlock achievements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Product Decisions
+
+### Why This Stack?
+- **Next.js 16 + Turbopack**: Fastest React framework with App Router for production-grade apps
+- **Tailwind CSS**: Utility-first styling for rapid UI development with consistent design tokens
+- **Zustand**: Lightweight state management with built-in persistence (no backend needed)
+- **Framer Motion**: Smooth animations that make the app feel premium
+- **Recharts**: Beautiful, responsive charts for progress visualization
+
+### Gamification Design
+- **XP System**: Earn XP based on workout duration (2 XP/min) and calories (0.5 XP/cal)
+- **Leveling**: Every 100 XP = 1 level, with visual progress bar
+- **Streaks**: Consecutive day tracking with fire emoji indicators
+- **Achievements**: 10 unlockable badges for various milestones
+- **Visual Feedback**: Animated transitions on every interaction
+
+### UX Decisions
+- **Dark theme with purple/orange gradient**: Premium fitness app aesthetic
+- **Floating Action Button**: Quick workout logging from any screen
+- **Modal form with type selector**: Fast entry with visual workout type picker
+- **7-day progress chart**: Immediate visual feedback on consistency
+- **Responsive grid layout**: Works on mobile and desktop
+
+## 🏗️ Architecture
+
+```
+src/
+├── app/
+│   ├── page.tsx          # Main dashboard
+│   ├── layout.tsx        # Root layout with metadata
+│   └── globals.css       # Global styles
+├── components/
+│   ├── WorkoutForm.tsx   # Modal form for logging workouts
+│   ├── WorkoutHistory.tsx # Scrollable list of past workouts
+│   ├── Achievements.tsx  # Badge grid with unlock states
+│   ├── ProgressChart.tsx  # 7-day XP area chart
+│   └── StatsCard.tsx     # Reusable stat display cards
+└── store/
+    └── workoutStore.ts   # Zustand store with persistence
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git clone https://github.com/randomkind2727/liftoff-clone.git
+cd liftoff-clone
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## 📊 Features
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Log workouts (type, duration, calories, notes)
+- ✅ XP & leveling system
+- ✅ Streak tracking
+- ✅ 10 achievement badges
+- ✅ 7-day progress chart
+- ✅ Workout history with emoji indicators
+- ✅ Persistent data (localStorage)
+- ✅ Animated UI with Framer Motion
+- ✅ Fully responsive design
+- ✅ Dark theme with gradient accents
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎮 How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Log a workout** — Tap the + button, select type, enter duration & calories
+2. **Earn XP** — XP = duration×2 + calories×0.5
+3. **Level up** — Every 100 XP advances you one level
+4. **Build streaks** — Work out consecutive days to grow your streak
+5. **Unlock achievements** — Hit milestones to earn badges
+6. **Track progress** — View your 7-day XP chart and stats
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router + Turbopack) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| State | Zustand (with persist middleware) |
+| Charts | Recharts |
+| Animations | Framer Motion |
+| Icons | Lucide React |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 AI Logs
+
+This project was built entirely by OWL (AI agent) using Claude Code. The full conversation log is available in `ai-logs.md`.
+
+## 📄 License
+
+MIT License — Built for 8x Engineer contest.
