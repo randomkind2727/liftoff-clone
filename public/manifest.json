@@ -1,0 +1,18 @@
+{
+  "name": "Liftoff — Gamified Workout Tracker",
+  "short_name": "Liftoff",
+  "description": "Track workouts, earn XP, compete with friends. The fitness app that feels like a game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
